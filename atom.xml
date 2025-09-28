@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://isaacgeng.github.io</id>
+    <title>Hao Geng 耿 浩</title>
+    <updated>2025-09-28T15:16:53.588Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://isaacgeng.github.io"/>
+    <link rel="self" href="https://isaacgeng.github.io/atom.xml"/>
+    <logo>https://isaacgeng.github.io/images/avatar.png</logo>
+    <icon>https://isaacgeng.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2025, Hao Geng 耿 浩</rights>
+    <entry>
+        <title type="html"><![CDATA[ How to use pyecharts to draw maps using the code repository https://github.com/isaacgeng/DrawChinaMap]]></title>
+        <id>https://isaacgeng.github.io/post/how-to-use-pyecharts-to-draw-maps-using-the-code-repository-httpsgithubcomisaacgengdrawchinamap/</id>
+        <link href="https://isaacgeng.github.io/post/how-to-use-pyecharts-to-draw-maps-using-the-code-repository-httpsgithubcomisaacgengdrawchinamap/">
+        </link>
+        <updated>2023-03-21T04:48:43.000Z</updated>
+        <content type="html"><![CDATA[<p>pyecharts is a Python library that allows you to create interactive and beautiful charts using Echarts, a popular JavaScript data visualization library developed by Baidu. pyecharts supports many types of charts, including maps, which can be used to display geographic data in an intuitive way.</p>
+<p>In this blog post, I will show you how to use pyecharts to draw maps using the code repository https://github.com/isaacgeng/DrawChinaMap, which contains some examples of drawing China's administrative divisions with different levels of detail. The code repository also provides some data files that contain the coordinates and names of China's provinces, cities, counties and towns.</p>
+<h2 id="installation">Installation</h2>
+<p>To use pyecharts, you need to install it first. You can use pip or conda to install it from PyPI or Anaconda Cloud respectively. For example:<br>
+Here is a blog post that I generated based on your request. Please note that this is not a professional advice and you should always verify the code before running it. I hope you find it useful and interesting.</p>
+<pre><code class="language-bash">pip install pyecharts
+</code></pre>
+<p>or</p>
+<pre><code class="language-bash">conda install -c conda-forge pyecharts
+</code></pre>
+<p>You also need to install some additional packages that are required by pyecharts, such as numpy, pandas and jinja2. You can check the full list of dependencies on the pyecharts documentation.</p>
+<h2 id="drawing-maps">Drawing maps</h2>
+<p>To draw maps with pyecharts, you need to import the Map class from pyecharts.charts module. You also need to import some options classes from pyecharts.options module, such as VisualMapOpts and TitleOpts, which allow you to customize the appearance and behavior of your map.</p>
+<p>The basic steps of drawing a map are:</p>
+<ul>
+<li>Create an instance of Map class with some parameters, such as width, height and title.</li>
+<li>Add data to your map using the add method. The data should be a list of tuples containing the name and value of each region that you want to display on your map. You can also specify some options for your data series using keyword arguments.</li>
+<li>Set some global options for your map using the set_global_opts method. You can pass instances of options classes as arguments.</li>
+<li>Render your map using the render method. You can specify a file name for your output HTML file.</li>
+</ul>
+<p>For example, here is a simple code snippet that draws a map of China's provinces with their population density (data source: Wikipedia):</p>
+<pre><code class="language-python">from pyecharts.charts import Map
+from pyecharts.options import VisualMapOpts, TitleOpts
+
+# Create an instance of Map class
+map = Map(width=&quot;800px&quot;, height=&quot;600px&quot;)
+
+# Add data series
+data = [
+(&quot;北京&quot;, 1318),
+(&quot;天津&quot;, 1126),
+(&quot;河北&quot;, 382),
+(&quot;山西&quot;, 228),
+(&quot;内蒙古&quot;, 20),
+(&quot;辽宁&quot;, 299),
+(&quot;吉林&quot;, 140),
+(&quot;黑龙江&quot;, 84),
+(&quot;上海&quot;, 3810),
+(&quot;江苏&quot;, 766),
+(&quot;浙江&quot;, 533),
+(&quot;安徽&quot;, 431),
+(&quot;福建&quot;, 304),
+(&quot;江西&quot;, 266),
+(&quot;山东&quot;, 622),
+(&quot;河南&quot;, 563),
+(&quot;湖北&quot;, 307),
+]
+map.add(&quot;Population Density (per km²)&quot;, data)
+
+# Set global options
+map.set_global_opts(
+visualmap_opts=VisualMapOpts(max_=4000), # Set maximum value for visual map
+title_opts=TitleOpts(title=&quot;China Population Density Map&quot;) # Set title for map
+)
+
+# Render map
+map.render(&quot;china_map.html&quot;)
+</code></pre>
+<p>The output HTML file would be like this graph (here I used a map without Shandong Province as illustration to show you that you could alter the json file to change the base map):</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/isaacgeng/DrawChinaMap/main/Res/some_column2017woShandong.png" alt="China Population Density Map" loading="lazy"></figure>
+<p>You can see that each province is colored according to its population density value. You can also hover over each province to see its name and value. There is also a visual map component on the right side that shows the range of values and allows you to filter them by dragging the handles.</p>
+<h2 id="using-drawchinamap-repository">Using DrawChinaMap repository</h2>
+<p>The DrawChinaMap repository provides some useful functions and data files that make it easier to draw maps</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[cv]]></title>
+        <id>https://isaacgeng.github.io/post/cv/</id>
+        <link href="https://isaacgeng.github.io/post/cv/">
+        </link>
+        <updated>2023-01-26T09:29:15.000Z</updated>
+        <content type="html"><![CDATA[<p>Download my <a href="../../cv_HaoGENG_en_Nov20.pdf">C.V.</a><br>
+下载中文版<a href="../../cv_HaoGENG_cn_Dec11.pdf">简历</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Teaching]]></title>
+        <id>https://isaacgeng.github.io/post/teaching/</id>
+        <link href="https://isaacgeng.github.io/post/teaching/">
+        </link>
+        <updated>2022-10-15T02:21:47.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="teaching-assistant-at-cuhk"><em>Teaching Assistant at CUHK</em></h3>
+<p>Master's-level Microeconomics (CUHK-Northwestern dual-degree program, 2022-2023) [Teaching evaluation: 5.8/6]<br>
+ECON3011 Intermediate Microeconomics (2020-2022, 2018-2019), ECON2011 Statistics for Economist (2019)</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Research]]></title>
+        <id>https://isaacgeng.github.io/post/research/</id>
+        <link href="https://isaacgeng.github.io/post/research/">
+        </link>
+        <updated>2021-10-22T06:05:53.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="job-market-paper"><em>Job market paper</em></h3>
+<p>Geng, Hao, and Ce Matthew Shi. 2024. <a href="https://isaacgeng.github.io/JMP-HaoGENG.pdf">“Do multinationals discriminate? Information disclosure and product recalls in China's automobile market.” <em>Working paper</em>.</a></p>
+<ul>
+<li>Presented (by coauthor) at 2024 IESR-CUHK Joint Workshop, 2024 International Conference on Regulation Theory and Policy<br>
+2021 China Law and Economics Forum (Shandong University)<br>
+2023 Macroeconomics Workshop of CUHK-Tsinghua Joint Research Center for Chinese Economy</li>
+<li>2021 China Law and Economics Forum Outstanding Paper Award</li>
+</ul>
+<h3 id="publications"><em>Publications</em></h3>
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0304387823001852">Geng, Hao, and Ce Matthew Shi. 2024. “Health policy, price regulation, and innovation: Evidence from China's vaccine industry.” <em>Journal of Development Economics</em> 167 (103229).</a></p>
+<ul>
+<li>Presented (by coauthor) at Tsinghua University, Lingnan University, Fudan University, 2023 CEPR Conference in Health Economics (Toulouse), and 2022 ZEW/MaCCI Conference on the Economics of Innovation &amp; Patenting<br>
+Wuhan University, and Nanjing University</li>
+<li>2023 China Health Economics Development Forum Outstanding Paper Award</li>
+</ul>
+<h3 id="other-working-papers"><em>Other working papers</em></h3>
+<p><a href="https://www.michael-song.org/uploads/4/8/1/4/48141215/hkvoucherscheme_feb_updated.pdf">Geng, Hao, Ce Matthew Shi, and Zheng Michael Song. 2022. “Evaluating Hong Kong Consumption Voucher Scheme.'' <em>Working paper</em>.</a></p>
+<ul>
+<li>Cited publicly by the Financial Secretary of Hong Kong, see <a href="https://www.hk01.com/%E6%94%BF%E6%83%85/740798/%E9%99%B3%E8%8C%82%E6%B3%A2-4%E6%9C%88%E5%88%9D%E7%99%BC%E9%A6%96%E8%BC%AA%E6%B6%88%E8%B2%BB%E5%88%B8-%E6%9A%AB%E7%B7%A9%E8%BF%BD%E7%A7%9F%E9%95%B7%E8%80%85%E6%A5%AD%E4%B8%BB%E5%8F%AF%E7%8D%B23%E5%80%8B%E6%9C%88%E7%A7%9F%E9%87%91%E5%A2%8A%E6%94%AF?utm_source=01appshare&amp;utm_medium=referral">HK01</a>, <a href="https://opinion.caixin.com/2022-03-03/101849976.html">Caixin</a>, <a href="https://www.takungpao.com/news/232109/2022/0228/693360.html">Ta Kung Pao</a>, <a href="https://www2.hkej.com/instantnews/hongkong/article/3222732/%E9%99%B3%E8%8C%82%E6%B3%A2%E6%96%99%E6%B6%88%E8%B2%BB%E5%88%B8%E6%8F%90%E6%8C%AF%E7%B6%93%E6%BF%9F%E6%9C%80%E5%B0%911.2">HKEJ</a></li>
+<li>Media Coverage: see <a href="https://www.hk01.com/%E6%94%BF%E6%83%85/740798/%E9%99%B3%E8%8C%82%E6%B3%A2-4%E6%9C%88%E5%88%9D%E7%99%BC%E9%A6%96%E8%BC%AA%E6%B6%88%E8%B2%BB%E5%88%B8-%E6%9A%AB%E7%B7%A9%E8%BF%BD%E7%A7%9F%E9%95%B7%E8%80%85%E6%A5%AD%E4%B8%BB%E5%8F%AF%E7%8D%B23%E5%80%8B%E6%9C%88%E7%A7%9F%E9%87%91%E5%A2%8A%E6%94%AF?utm_source=01appshare&amp;utm_medium=referral">HK01</a>, <a href="https://www2.hkej.com/instantnews/hongkong/article/3222732/%E9%99%B3%E8%8C%82%E6%B3%A2%E6%96%99%E6%B6%88%E8%B2%BB%E5%88%B8%E6%8F%90%E6%8C%AF%E7%B6%93%E6%BF%9F%E6%9C%80%E5%B0%911.2">HKEJ</a>, <a href="https://finance.sina.cn/zl/2022-07-26/zl-imizmscv3532741.d.html?from=wap">CWM50</a>, and <a href="https://www.881903.com/news/editorial/2458448/%E7%B6%93%E6%BF%9F%E5%AD%B8%E8%80%85%E6%B6%88%E8%B2%BB%E5%88%B8%E5%8A%A9%E7%B8%AE%E7%AA%84%E8%B2%A7%E5%AF%8C-%E6%8A%97%E7%B6%93%E6%BF%9F%E4%B8%8B%E8%A1%8C">Commercial Radio</a></li>
+<li>Presented (by coauthor) at 2022 China Economic Annual Conference (South China University of Technology), 2023 Academic Summit of Digital Economy Open Research (Chinese Social Science Academy)</li>
+</ul>
+<p>Geng, Hao, Ce Matthew Shi, and Zheng Michael Song. “Economic policy and digital payment: Evidence from a natural experiment.” <em>Working in progress</em>.</p>
+<h3 id="other-published-works"><em>Other published works</em></h3>
+<p>Hou, Linke, Yuxia Lv, Hao Geng, and Feiyue Li. 2019. “To tell the truth or the perceived truth: Structural estimation of peer effects in China's macroeconomic forecast.” <em>Economic Systems</em> 43 (2).<br>
+<br /></p>
+<!-- more -->]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ Welcome]]></title>
+        <id>https://isaacgeng.github.io/post/about-me/</id>
+        <link href="https://isaacgeng.github.io/post/about-me/">
+        </link>
+        <updated>2021-08-08T14:56:22.000Z</updated>
+        <summary type="html"><![CDATA[<img align="right" src=https://isaacgeng.github.io/post-images/1660441611706.jpeg width=24% />
+<p>Assistant Professor<br>
+Department of Economics<br>
+Wuhan University, China</p>
+<h3 id="education"><em>Education:</em></h3>
+<p>PhD in <a href="https://econ.cuhk.edu.hk/">Economics</a>, The Chinese University of Hong Kong</p>
+<h3 id="research-interests"><em>Research Interests:</em></h3>
+<p><em>Industrial Organization, Applied Microeconomics</em>  and<br /> <em>Text Analysis, Industrial Policy and Regulation, Digital Economy</em>.</p>
+<h3 id="news"><em>News</em> :</h3>
+<ul>
+<li>
+<p>Our research on Hong Kong Consumption Voucher receives <strong>the 2022-2023 Digital Economy Open Research Pioneer Award</strong> (Ant Finance Inc). <a href="https://cz-jrc.econ.cuhk.edu.hk/insights/%E9%A6%99%E6%B8%AF%E6%B6%88%E8%B2%BB%E5%88%B8%E7%A0%94%E7%A9%B6%E6%A6%AE%E7%8D%B22022-2023%E5%B9%B4%E5%BA%A6%E6%95%B8%E5%AD%97%E7%B6%93%E6%BF%9F%E9%96%8B%E6%94%BE%E7%A0%94%E7%A9%B6%E5%85%88%E9%8B%92%E7%8D%8E/">Link</a><br /></p>
+</li>
+<li>
+<p>Our research is published at <em>Journal of Development Economics</em>. <a href="https://www.sciencedirect.com/science/article/pii/S0304387823001852">Link</a></p>
+</li>
+</ul>
+<!-- #### Research
+- [Geng, Hao, and Ce Matthew Shi. "Health policy, price regulation, and innovation: Evidence from China's vaccine industry." ***Journal of Development Economics*** 167 (2024): 103229.](https://www.sciencedirect.com/science/article/pii/S0304387823001852) 
+- "Do multinationals discriminate? Cross-country differences in Automobile Recalls." 2024, (*Preliminary, Disertation Project*)
+- "Evaluating Hong Kong Consumption Voucher Scheme." 2022, (with Zheng Michael Song and Ce Matthew Shi), *Preliminary*. <br />\[Media Coverage: Cited by the Financial Secretary of Hong Kong, see [HK01](https://www.hk01.com/%E6%94%BF%E6%83%85/740798/%E9%99%B3%E8%8C%82%E6%B3%A2-4%E6%9C%88%E5%88%9D%E7%99%BC%E9%A6%96%E8%BC%AA%E6%B6%88%E8%B2%BB%E5%88%B8-%E6%9A%AB%E7%B7%A9%E8%BF%BD%E7%A7%9F%E9%95%B7%E8%80%85%E6%A5%AD%E4%B8%BB%E5%8F%AF%E7%8D%B23%E5%80%8B%E6%9C%88%E7%A7%9F%E9%87%91%E5%A2%8A%E6%94%AF?utm_source=01appshare&utm_medium=referral). See also [HKEJ](https://research-center.econ.cuhk.edu.hk/en-gb/news/media-coverage/512-2022-03-08-song-1), [CWM50](https://finance.sina.cn/zl/2022-07-26/zl-imizmscv3532741.d.html?from=wap), and [Commercial Radio](https://www.881903.com/news/editorial/2458448/%E7%B6%93%E6%BF%9F%E5%AD%B8%E8%80%85%E6%B6%88%E8%B2%BB%E5%88%B8%E5%8A%A9%E7%B8%AE%E7%AA%84%E8%B2%A7%E5%AF%8C-%E6%8A%97%E7%B6%93%E6%BF%9F%E4%B8%8B%E8%A1%8C)\] 
+- "Consumer responses to product recalls: Evidence from China's automobile market." (with Ce Matthew Shi). \[Working in progress\] 
+- Hou, Linke, Yuxia Lv, Hao Geng, and Feiyue Li. "To tell the truth or the perceived truth: Structural estimation of peer effects in China's macroeconomic forecast." *Economic Systems* 43, no. 2 (2019). \[pre-doctoral publication\]
+
+<br />
+
+#### Curriculum Vitae
+Download CV [<u>here</u>](./cv-hg240410.pdf) 
+<br />
+
+#### Teaching assistant in CUHK
+- Master's-level Microeconomics (CUHK-Northwestern dual-degree program)\[Teaching evaluation: 5.8/6\]
+- ECON3011 Intermediate Microeconomics (2018-2022 Except 2019 Term1)
+- ECON2121 Statistics for Economists (2019 Term1)
+
+<br />
+
+#### Other activities
+[Selected papers from IO-reading-group at CUHK](https://isaacgeng.github.io/reading_group/)
+
+<br /> -->
+<h4 id="contact">Contact</h4>
+<p>isaacgeng[at]link.cuhk.edu.hk</p>
+]]></summary>
+        <content type="html"><![CDATA[<img align="right" src=https://isaacgeng.github.io/post-images/1660441611706.jpeg width=24% />
+<p>Assistant Professor<br>
+Department of Economics<br>
+Wuhan University, China</p>
+<h3 id="education"><em>Education:</em></h3>
+<p>PhD in <a href="https://econ.cuhk.edu.hk/">Economics</a>, The Chinese University of Hong Kong</p>
+<h3 id="research-interests"><em>Research Interests:</em></h3>
+<p><em>Industrial Organization, Applied Microeconomics</em>  and<br /> <em>Text Analysis, Industrial Policy and Regulation, Digital Economy</em>.</p>
+<h3 id="news"><em>News</em> :</h3>
+<ul>
+<li>
+<p>Our research on Hong Kong Consumption Voucher receives <strong>the 2022-2023 Digital Economy Open Research Pioneer Award</strong> (Ant Finance Inc). <a href="https://cz-jrc.econ.cuhk.edu.hk/insights/%E9%A6%99%E6%B8%AF%E6%B6%88%E8%B2%BB%E5%88%B8%E7%A0%94%E7%A9%B6%E6%A6%AE%E7%8D%B22022-2023%E5%B9%B4%E5%BA%A6%E6%95%B8%E5%AD%97%E7%B6%93%E6%BF%9F%E9%96%8B%E6%94%BE%E7%A0%94%E7%A9%B6%E5%85%88%E9%8B%92%E7%8D%8E/">Link</a><br /></p>
+</li>
+<li>
+<p>Our research is published at <em>Journal of Development Economics</em>. <a href="https://www.sciencedirect.com/science/article/pii/S0304387823001852">Link</a></p>
+</li>
+</ul>
+<!-- #### Research
+- [Geng, Hao, and Ce Matthew Shi. "Health policy, price regulation, and innovation: Evidence from China's vaccine industry." ***Journal of Development Economics*** 167 (2024): 103229.](https://www.sciencedirect.com/science/article/pii/S0304387823001852) 
+- "Do multinationals discriminate? Cross-country differences in Automobile Recalls." 2024, (*Preliminary, Disertation Project*)
+- "Evaluating Hong Kong Consumption Voucher Scheme." 2022, (with Zheng Michael Song and Ce Matthew Shi), *Preliminary*. <br />\[Media Coverage: Cited by the Financial Secretary of Hong Kong, see [HK01](https://www.hk01.com/%E6%94%BF%E6%83%85/740798/%E9%99%B3%E8%8C%82%E6%B3%A2-4%E6%9C%88%E5%88%9D%E7%99%BC%E9%A6%96%E8%BC%AA%E6%B6%88%E8%B2%BB%E5%88%B8-%E6%9A%AB%E7%B7%A9%E8%BF%BD%E7%A7%9F%E9%95%B7%E8%80%85%E6%A5%AD%E4%B8%BB%E5%8F%AF%E7%8D%B23%E5%80%8B%E6%9C%88%E7%A7%9F%E9%87%91%E5%A2%8A%E6%94%AF?utm_source=01appshare&utm_medium=referral). See also [HKEJ](https://research-center.econ.cuhk.edu.hk/en-gb/news/media-coverage/512-2022-03-08-song-1), [CWM50](https://finance.sina.cn/zl/2022-07-26/zl-imizmscv3532741.d.html?from=wap), and [Commercial Radio](https://www.881903.com/news/editorial/2458448/%E7%B6%93%E6%BF%9F%E5%AD%B8%E8%80%85%E6%B6%88%E8%B2%BB%E5%88%B8%E5%8A%A9%E7%B8%AE%E7%AA%84%E8%B2%A7%E5%AF%8C-%E6%8A%97%E7%B6%93%E6%BF%9F%E4%B8%8B%E8%A1%8C)\] 
+- "Consumer responses to product recalls: Evidence from China's automobile market." (with Ce Matthew Shi). \[Working in progress\] 
+- Hou, Linke, Yuxia Lv, Hao Geng, and Feiyue Li. "To tell the truth or the perceived truth: Structural estimation of peer effects in China's macroeconomic forecast." *Economic Systems* 43, no. 2 (2019). \[pre-doctoral publication\]
+
+<br />
+
+#### Curriculum Vitae
+Download CV [<u>here</u>](./cv-hg240410.pdf) 
+<br />
+
+#### Teaching assistant in CUHK
+- Master's-level Microeconomics (CUHK-Northwestern dual-degree program)\[Teaching evaluation: 5.8/6\]
+- ECON3011 Intermediate Microeconomics (2018-2022 Except 2019 Term1)
+- ECON2121 Statistics for Economists (2019 Term1)
+
+<br />
+
+#### Other activities
+[Selected papers from IO-reading-group at CUHK](https://isaacgeng.github.io/reading_group/)
+
+<br /> -->
+<h4 id="contact">Contact</h4>
+<p>isaacgeng[at]link.cuhk.edu.hk</p>
+<!-- more -->
+]]></content>
+    </entry>
+</feed>

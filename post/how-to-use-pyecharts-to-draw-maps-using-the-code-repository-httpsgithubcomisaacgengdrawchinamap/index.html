@@ -1,0 +1,217 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title> How to use pyecharts to draw maps using the code repository https://github.com/isaacgeng/DrawChinaMap | Hao Geng 耿 浩</title>
+
+<link rel="shortcut icon" href="https://isaacgeng.github.io/favicon.ico?v=1759072526762">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://isaacgeng.github.io/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Hao Geng 耿 浩
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            Home
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/research" class="menu gt-a-link">
+                            Research
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/cv" class="menu gt-a-link">
+                            C.V.
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/teaching" class="menu gt-a-link">
+                            Teaching
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1759072526762" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <!-- <h2 class="post-title">
+                     How to use pyecharts to draw maps using the code repository https://github.com/isaacgeng/DrawChinaMap
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2023-03-21 ·
+                    </time>
+                    
+                </div> -->
+                <div class="post-content">
+                    <p>pyecharts is a Python library that allows you to create interactive and beautiful charts using Echarts, a popular JavaScript data visualization library developed by Baidu. pyecharts supports many types of charts, including maps, which can be used to display geographic data in an intuitive way.</p>
+<p>In this blog post, I will show you how to use pyecharts to draw maps using the code repository https://github.com/isaacgeng/DrawChinaMap, which contains some examples of drawing China's administrative divisions with different levels of detail. The code repository also provides some data files that contain the coordinates and names of China's provinces, cities, counties and towns.</p>
+<h2 id="installation">Installation</h2>
+<p>To use pyecharts, you need to install it first. You can use pip or conda to install it from PyPI or Anaconda Cloud respectively. For example:<br>
+Here is a blog post that I generated based on your request. Please note that this is not a professional advice and you should always verify the code before running it. I hope you find it useful and interesting.</p>
+<pre><code class="language-bash">pip install pyecharts
+</code></pre>
+<p>or</p>
+<pre><code class="language-bash">conda install -c conda-forge pyecharts
+</code></pre>
+<p>You also need to install some additional packages that are required by pyecharts, such as numpy, pandas and jinja2. You can check the full list of dependencies on the pyecharts documentation.</p>
+<h2 id="drawing-maps">Drawing maps</h2>
+<p>To draw maps with pyecharts, you need to import the Map class from pyecharts.charts module. You also need to import some options classes from pyecharts.options module, such as VisualMapOpts and TitleOpts, which allow you to customize the appearance and behavior of your map.</p>
+<p>The basic steps of drawing a map are:</p>
+<ul>
+<li>Create an instance of Map class with some parameters, such as width, height and title.</li>
+<li>Add data to your map using the add method. The data should be a list of tuples containing the name and value of each region that you want to display on your map. You can also specify some options for your data series using keyword arguments.</li>
+<li>Set some global options for your map using the set_global_opts method. You can pass instances of options classes as arguments.</li>
+<li>Render your map using the render method. You can specify a file name for your output HTML file.</li>
+</ul>
+<p>For example, here is a simple code snippet that draws a map of China's provinces with their population density (data source: Wikipedia):</p>
+<pre><code class="language-python">from pyecharts.charts import Map
+from pyecharts.options import VisualMapOpts, TitleOpts
+
+# Create an instance of Map class
+map = Map(width=&quot;800px&quot;, height=&quot;600px&quot;)
+
+# Add data series
+data = [
+(&quot;北京&quot;, 1318),
+(&quot;天津&quot;, 1126),
+(&quot;河北&quot;, 382),
+(&quot;山西&quot;, 228),
+(&quot;内蒙古&quot;, 20),
+(&quot;辽宁&quot;, 299),
+(&quot;吉林&quot;, 140),
+(&quot;黑龙江&quot;, 84),
+(&quot;上海&quot;, 3810),
+(&quot;江苏&quot;, 766),
+(&quot;浙江&quot;, 533),
+(&quot;安徽&quot;, 431),
+(&quot;福建&quot;, 304),
+(&quot;江西&quot;, 266),
+(&quot;山东&quot;, 622),
+(&quot;河南&quot;, 563),
+(&quot;湖北&quot;, 307),
+]
+map.add(&quot;Population Density (per km²)&quot;, data)
+
+# Set global options
+map.set_global_opts(
+visualmap_opts=VisualMapOpts(max_=4000), # Set maximum value for visual map
+title_opts=TitleOpts(title=&quot;China Population Density Map&quot;) # Set title for map
+)
+
+# Render map
+map.render(&quot;china_map.html&quot;)
+</code></pre>
+<p>The output HTML file would be like this graph (here I used a map without Shandong Province as illustration to show you that you could alter the json file to change the base map):</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/isaacgeng/DrawChinaMap/main/Res/some_column2017woShandong.png" alt="China Population Density Map" loading="lazy"></figure>
+<p>You can see that each province is colored according to its population density value. You can also hover over each province to see its name and value. There is also a visual map component on the right side that shows the range of values and allows you to filter them by dragging the handles.</p>
+<h2 id="using-drawchinamap-repository">Using DrawChinaMap repository</h2>
+<p>The DrawChinaMap repository provides some useful functions and data files that make it easier to draw maps</p>
+
+                </div>
+            </article>
+        </div>
+
+        <!-- 
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://isaacgeng.github.io/post/cv/" class="post-title gt-a-link">
+                    cv
+                </a>
+            </div>
+         -->
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <!-- <div class="slogan gt-c-content-color-first"></div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://isaacgeng.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div> -->
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
